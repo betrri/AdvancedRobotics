@@ -72,6 +72,11 @@ URDF = Unified Robot Description Format is xml based file that describes dimensi
       </geometry>
     </collision>
   </link>
-
+  
+  
 KDL = Kinematics and Dynamics Library. It is possible to represent the kinematic chain by a KDL Object. In this excercise we use URDF file to 
 build a KDL object. By using this KDL Object we can calculate frame transformations and kinematics for the robot.
+
+### Question 3: Implement gravity compensation + PD
+
+
