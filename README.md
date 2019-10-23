@@ -95,4 +95,10 @@ PD gains are used to compute the actual control command
         comp_d_.data = C_.data + G_.data;
         tau_d_.data = aux_d_.data + comp_d_.data;
         
+ ### Question 4: Implement velocity controller
+ 
+ We get the velocity controller by terminating the Kp values from the computed_torque_controller.cpp
+ 
+ ### Question 5: Implement kinematic controller (using the velocity controller)
+ 
  
