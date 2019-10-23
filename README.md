@@ -23,7 +23,7 @@ From this KDL tree we can build inverse dynamics solver which we can use to comp
         id_solver_->JntToCoriolis(q_, qdot_, C_);
         id_solver_->JntToGravity(q_, G_); 
 
-With this robot model we can calculate the actual control command we give to each joint (with PID values).
+With this robot model we can calculate the actual control command we give to each joint (with PD values).
 
         // *** 2.3 Apply Torque Command to Actuator ***
         aux_d_.data = M_.data * (qd_ddot_.data + Kp_.data.cwiseProduct(e_.data) + Kd_.data.cwiseProduct(e_dot_.data));
@@ -77,6 +77,22 @@ URDF = Unified Robot Description Format is xml based file that describes dimensi
 KDL = Kinematics and Dynamics Library. It is possible to represent the kinematic chain by a KDL Object. In this excercise we use URDF file to 
 build a KDL object. By using this KDL Object we can calculate frame transformations and kinematics for the robot.
 
-### Question 3: Implement gravity compensation + PD
+### Question 3: ![alt text](https://github.com/betrri/AdvancedRobotics/blob/master/pd%2Bgrav.png)
 
-![alt text](https://github.com/betrri/AdvancedRobotics/blob/master/pd%2Bgrav.png)
+No implementation was done for this question but rather an study for the given and computed_torque_controller.cpp.
+
+Gravity compensation is done by giving the solver a gravity vector along the z-axis.
+
+        gravity_ = KDL::Vector::Zero(); // ?
+        gravity_(2) = -9.81;            // 0: x-axis 1: y-axis 2: z-axis
+
+        id_solver_.reset(new KDL::ChainDynParam(kdl_chain_, gravity_));
+        
+PD gains are used to compute the actual control command
+
+        // *** 2.3 Apply Torque Command to Actuator ***
+        aux_d_.data = M_.data * (qd_ddot_.data + Kp_.data.cwiseProduct(e_.data) + Kd_.data.cwiseProduct(e_dot_.data));
+        comp_d_.data = C_.data + G_.data;
+        tau_d_.data = aux_d_.data + comp_d_.data;
+        
+ 
