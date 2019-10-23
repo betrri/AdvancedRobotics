@@ -1,10 +1,8 @@
 # AdvancedRobotics
 
-Excercise 1.
+## Excercise 1.
 
-Question 1: Explain how Elfin controller
-computed_torque_controller.cpp
-implements joint space inverse dynamics controller
+### Question 1: Explain how Elfin controller computed_torque_controller.cpp implements joint space inverse dynamics controller
 
 By using given URDF description we can build KDL Object.
 
@@ -33,7 +31,7 @@ With this robot model we can calculate the actual control command we give to eac
         tau_d_.data = aux_d_.data + comp_d_.data;
 
 
-Question 2: What are URDF and KDL packages?
+### Question 2: What are URDF and KDL packages?
 
 URDF = Unified Robot Description Format is xml based file that describes dimensions for the actual robot model.
 
