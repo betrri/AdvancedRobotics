@@ -101,8 +101,9 @@ PD gains are used to compute the actual control command
  
  ### Question 5: Implement kinematic controller (using the velocity controller)
  
- TODO
+ Kp_dot = Kp / Kd. This is multiplied to the input of the velocity controller.
  
  ### Question 6:  Implement Task space controller
 
+ --
 
