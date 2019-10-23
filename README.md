@@ -79,4 +79,4 @@ build a KDL object. By using this KDL Object we can calculate frame transformati
 
 ### Question 3: Implement gravity compensation + PD
 
-
+![alt text](https://github.com/betrri/AdvancedRobotics/blob/master/pd%2Bgrav.png)
