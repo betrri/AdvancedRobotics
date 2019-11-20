@@ -117,6 +117,10 @@ have to determine how the repulsive potentials affect the torque command given t
 ![alt text](https://github.com/betrri/AdvancedRobotics/blob/master/torquecontrol_potential.png)
 
 ### Question 2. Implement the joint limits as potential field: this can be artificial limit
+Potential field approach can be implemented to act as internal joint limits
+Joint forces are:
+![alt text](https://github.com/betrri/AdvancedRobotics/blob/master/joint_potential.png)
+
 
 
 
