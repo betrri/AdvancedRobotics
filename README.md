@@ -111,9 +111,13 @@ PD gains are used to compute the actual control command
 
 ### Question 1. How to implement a reactive obstacle avoidance on Elfin joint pace controller?
 potential fields determined in task space, control given in joint space.
+
 have to determine how the repulsive potentials affect the torque command given to the controller
 
 ![alt text](https://github.com/betrri/AdvancedRobotics/blob/master/torquecontrol_potential.png)
+
+### Question 2. Implement the joint limits as potential field: this can be artificial limit
+
 
 
 
